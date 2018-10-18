@@ -1,0 +1,187 @@
+{
+  "sftp://182.162.109.226:30922@root": {
+    "data": {
+      "gowork": {
+        "src": {
+          "vt": {
+            "vt": {},
+            "vt.json": {
+              "type": "-",
+              "size": 1287,
+              "lmtime": 0,
+              "modified": false
+            },
+            "virustotal": {},
+            "main.go": {
+              "type": "-",
+              "size": 80,
+              "lmtime": 1533892990703,
+              "modified": false
+            },
+            "loadjson": {}
+          },
+          "github.com": {
+            "EomJeongyeon": {
+              "vt": {
+                "test": {},
+                "vtCtrl.go.bak": {
+                  "type": "-",
+                  "size": 4446,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "vt": {
+                  "type": "-",
+                  "size": 7530697,
+                  "lmtime": 0,
+                  "modified": true
+                },
+                "database": {
+                  "pg.go": {
+                    "type": "-",
+                    "size": 2905,
+                    "lmtime": 1534395406642,
+                    "modified": false
+                  },
+                  "pg": {
+                    "pg.go": {
+                      "type": "-",
+                      "size": 6808,
+                      "lmtime": 1539678370840,
+                      "modified": false
+                    }
+                  }
+                },
+                "main.go.bak": {
+                  "type": "-",
+                  "size": 4181,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "vt.json.bak": {
+                  "type": "-",
+                  "size": 1287,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "virustotal": {
+                  "virustotal_test.go": {
+                    "type": "-",
+                    "size": 1589,
+                    "lmtime": 1535703895954,
+                    "modified": false
+                  },
+                  "virustotal_main.go.bak": {
+                    "type": "-",
+                    "size": 6110,
+                    "lmtime": 0,
+                    "modified": false
+                  },
+                  "virustotal_main.go": {
+                    "type": "-",
+                    "size": 6224,
+                    "lmtime": 1536191952528,
+                    "modified": false
+                  },
+                  "virustotal.go": {
+                    "type": "-",
+                    "size": 7238,
+                    "lmtime": 1536192143795,
+                    "modified": false
+                  }
+                },
+                "loadjson": {
+                  "loadjson.go": {
+                    "type": "-",
+                    "size": 2287,
+                    "lmtime": 1535702447588,
+                    "modified": false
+                  },
+                  "loadjson_test.go": {
+                    "type": "-",
+                    "size": 480,
+                    "lmtime": 1535704925908,
+                    "modified": false
+                  },
+                  "vt.json": {
+                    "type": "-",
+                    "size": 6967,
+                    "lmtime": 0,
+                    "modified": false
+                  }
+                },
+                "vt.go": {
+                  "type": "-",
+                  "size": 1502,
+                  "lmtime": 1536191924419,
+                  "modified": false
+                },
+                "common": {
+                  "pgdb_block.go": {
+                    "type": "-",
+                    "size": 362,
+                    "lmtime": 1536192327709,
+                    "modified": false
+                  },
+                  "vt_block.go": {
+                    "type": "-",
+                    "size": 1614,
+                    "lmtime": 1534830782978,
+                    "modified": true
+                  }
+                },
+                "vtCtrl.log.bak": {
+                  "type": "-",
+                  "size": 8217,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "loadconf": {
+                  "loadconf.go": {
+                    "type": "-",
+                    "size": 2677,
+                    "lmtime": 1536192217933,
+                    "modified": false
+                  },
+                  "loadconf_test.go": {
+                    "type": "-",
+                    "size": 1485,
+                    "lmtime": 1535700801241,
+                    "modified": false
+                  }
+                },
+                "config": {
+                  "scan.txt": {
+                    "type": "-",
+                    "size": 0,
+                    "lmtime": 1535354376379,
+                    "modified": true
+                  },
+                  "config.json": {
+                    "type": "-",
+                    "size": 1436,
+                    "lmtime": 1534136844869,
+                    "modified": false
+                  },
+                  "vt.txt": {
+                    "type": "-",
+                    "size": 66,
+                    "lmtime": 0,
+                    "modified": false
+                  },
+                  "vt_config.json": {
+                    "type": "-",
+                    "size": 1746,
+                    "lmtime": 1539128784684,
+                    "modified": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$version": 1
+}

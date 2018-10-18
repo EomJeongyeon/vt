@@ -1,0 +1,17 @@
+{
+    "host": "182.162.109.226",
+    "username": "root",
+    "password": "vmfhvkdlf!",
+    "remotePath": "/data/gowork/src/github.com/EomJeongyeon/vt",
+    "protocol": "sftp",
+    "port": 30922,
+    "fileNameEncoding": "utf8",
+    "autoUpload": true,
+    "autoDelete": false,
+    "autoDownload": false,
+    "ignore": [
+        ".git",
+        "/.vscode",
+        "/.vscode/*"
+    ]
+}

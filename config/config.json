@@ -1,0 +1,52 @@
+{
+    "management_db": {
+        "addr": "127.0.0.1:27017"
+    },
+    "integrated_db": {
+        "addr": "127.0.0.1:5432",
+        "id": "postgres",
+        "password": "postgres",
+        "db_name": "temp_vt",
+        "ssl_mode": false
+    },
+    "integrated_storage": "/data/integrated_storage",
+    "cuckoo_info": {
+        "node_count": 5,
+        "node_info": [{
+                "node_name": "node1",
+                "ip": "192.168.0.11",
+                "api_port": "8000",
+                "proto": "http",
+                "vm_cnt": 10
+            },
+            {
+                "node_name": "node2",
+                "ip": "192.168.0.12",
+                "api_port": "8000",
+                "proto": "http",
+                "vm_cnt": 10
+            },
+            {
+                "node_name": "node3",
+                "ip": "192.168.0.13",
+                "api_port": "8000",
+                "proto": "http",
+                "vm_cnt": 10
+            },
+            {
+                "node_name": "node4",
+                "ip": "192.168.0.14",
+                "api_port": "8000",
+                "proto": "http",
+                "vm_cnt": 10
+            },
+            {
+                "node_name": "node5",
+                "ip": "192.168.0.15",
+                "api_port": "8000",
+                "proto": "http",
+                "vm_cnt": 10
+            }
+        ]
+    }
+}

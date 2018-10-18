@@ -107,6 +107,7 @@ func InsertVirustotalTbl(qr common.PGVirustotalBlock) bool {
 	defer db.Close()
 
 	configAntivirusList := loadconf.ConfigVTInfo.Virustotal.AntivirusList
+	antivirusCount := len(configAntivirusList)
 
 	queryColumn := []string{}
 	queryResult := []string{}
@@ -117,12 +118,19 @@ func InsertVirustotalTbl(qr common.PGVirustotalBlock) bool {
 		queryResult = []string{tempScanDate}
 	}
 
+	var postivies int
+	tempAntivirus := []string{}
+
 	for _, antivirus := range configAntivirusList {
 		if result, exist := qr.AntivirusList[antivirus]; exist {
-			newAntivirus := strings.ToLower(antivirus)
-			newAntivirus = strings.Replace(newAntivirus, `-`, `_`, -1)
+			newAntivirus := `"` + antivirus + `"` // "uppercase"
 
 			newResult := `'` + result.(string) + `'`
+
+			if newResult != `''` && newResult != `'null'` {
+				postivies = postivies + 1
+				tempAntivirus = append(tempAntivirus, result.(string))
+			}
 
 			queryColumn = append(queryColumn, newAntivirus)
 			queryResult = append(queryResult, newResult)
@@ -131,10 +139,11 @@ func InsertVirustotalTbl(qr common.PGVirustotalBlock) bool {
 
 	queryCol := strings.Join(queryColumn, ", ")
 	queryRes := strings.Join(queryResult, ", ")
+	queryAntivirus := strings.Join(tempAntivirus, ",")
 
-	query := fmt.Sprintf(`INSERT INTO virustotal (mal_idx, md5, sha256, positives, %s)
-		VALUES (%d,'%s','%s',%d,%s) ON CONFLICT DO NOTHING RETURNING idx;`,
-		queryCol, qr.MalIdx, qr.Md5, qr.Sha256, qr.Positives, queryRes)
+	query := fmt.Sprintf(`INSERT INTO virustotal (mal_idx, md5, sha256, positives, %s, antivirus)
+		VALUES (%d,'%s','%s',%d,%s,'%s') ON CONFLICT DO NOTHING RETURNING idx;`,
+		queryCol, qr.MalIdx, qr.Md5, qr.Sha256, postivies, queryRes, queryAntivirus)
 
 	/*
 		query := fmt.Sprintf(`INSERT INTO virustotal (mal_idx, md5, sha256, scan_date, positives,
@@ -164,6 +173,18 @@ func InsertVirustotalTbl(qr common.PGVirustotalBlock) bool {
 		log.Println(err)
 		return false
 	}
+
+	vt := fmt.Sprintf("%d/%d", postivies, antivirusCount)
+	// Update malwares
+	query = `UPDATE malwares SET vt=$1 WHERE idx=$2 and sha256=$3`
+	log.Println(query)
+	res, err := db.Exec(query, vt, qr.MalIdx, qr.Sha256)
+	if err != nil {
+		log.Println(err)
+		return false
+	}
+	count, err := res.RowsAffected()
+	log.Println(count)
 
 	return true
 }
